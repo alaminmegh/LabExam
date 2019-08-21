@@ -43,3 +43,15 @@ Route::get('/admin/profile', 'AdminController@showProfile')->name('admin.profile
 Route::get('/admin/searchContent', 'AdminController@searchContent')->name('admin.searchContent');
 
 Route::get('/admin/content_delete', 'AdminController@contentDelete')->name('admin.contentDelete');
+
+
+Route::get('/moderator/upload', 'ModeratorController@add_content')->name('moderator.add_content');
+Route::post('/moderator/upload', 'ModeratorController@upload_content');
+
+Route::get('/moderator/softwareList', 'ModeratorController@softwareList')->name('moderator.softwareList');
+
+Route::get('/moderator/profile', 'ModeratorController@showProfile')->name('moderator.profile');
+
+Route::get('/moderator/searchContent', 'ModeratorController@searchContent')->name('moderator.searchContent');
+
+Route::get('/moderator/content_delete', 'ModeratorController@contentDelete')->name('moderator.contentDelete');
