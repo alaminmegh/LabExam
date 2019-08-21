@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\SignupRequest;
-// use Illuminate\Support\Facades\DB;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class SignUpController extends Controller
 {
@@ -17,7 +16,15 @@ class SignUpController extends Controller
   public function create_user(SignupRequest $request)
   {
     $addUser = DB::table('users')->insert(
-      ['username' => $request->username, 'email' => $request->email, 'password' => $request->password]
+      ['username' => $request->username, 'email' => $request->email, 'password' => $request->password, 'role' => $request->userType]
     );
+
+    if($addUser){
+      $request->session()->flash('success','Registration Successfully!');
+      return redirect()->route('signup.index');
+    }else {
+      $request->session()->flash('error','Registration Fail!');
+      return redirect()->route('signup.index');
+    }
   }
 }

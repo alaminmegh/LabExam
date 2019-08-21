@@ -23,17 +23,28 @@
         <div class="login_section d-flex flex-fill justify-content-center">
           <div class="login_form w-50">
             <h5 class="text-center">Login Form</h5>
-            <span class="alert text-white p-0 py-1 m-0 mt-2 d-block text-center">{{session('error')}}</span>
+            @if(session()->has('error'))
+            <div class="alert alert-danger py-1 w-75 mx-auto">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>{{session('error')}}</strong>
+            </div>
+            @endif
             <form class="w-75 mx-auto mt-3 pb-4 text-white clearfix" method="post">
               @csrf
               <div class="form-group">
-                <label for="">User Id:</label>
-                <input type="text" name="userid" class="form-control form-control-sm" id="" placeholder="User Id">
+                <label for="">Username:</label>
+                <input type="text" name="username" class="form-control form-control-sm" id="" placeholder="Username">
               </div>
+              @if ($errors->has('username'))
+                <p class="text-danger">{{ $errors->first('username') }}</p>
+                @endif
               <div class="form-group">
                 <label for="">Password:</label>
                 <input type="password" name="password" class="form-control form-control-sm" id="" placeholder="Password">
               </div>
+              @if ($errors->has('password'))
+                <p class="text-danger">{{ $errors->first('password') }}</p>
+                @endif
               <button type="submit" class="btn btn-sm btn-success btn-block mb-3">Login</button>
 
               <a href="#" class="float-left">Forget Password?</a>

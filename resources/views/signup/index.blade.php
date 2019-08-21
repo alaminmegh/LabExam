@@ -23,7 +23,18 @@
         <div class="login_section d-flex flex-fill justify-content-center">
           <div class="login_form w-50">
             <h5 class="text-center">Registration</h5>
-            <span class="alert text-white p-0 py-1 m-0 mt-2 d-block text-center">{{session('error')}}</span>
+            @if(session()->has('success'))
+    <div class="alert alert-success py-1 w-75 mx-auto">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{session('success')}}</strong>
+    </div>
+    @endif
+    @if(session()->has('error'))
+    <div class="alert alert-danger py-1 w-75 mx-auto">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{session('error')}}</strong>
+    </div>
+    @endif
             <form class="w-75 mx-auto mt-3 pb-4 text-white clearfix" method="post">
               @csrf
               <div class="form-group">

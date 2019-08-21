@@ -1,0 +1,86 @@
+
+body{
+  background-color: #f9f9f9;
+}
+.container {
+    max-width: 1240px !important;
+}
+
+.bg_header {}
+
+.header_section {
+    margin-top: 10px;
+    border: 2px solid #1E88E5;
+}
+
+.logo {
+    margin: 5px 0px;
+}
+
+.logo img {
+    width: 80px;
+}
+
+.menu_top {}
+
+.menu_top li {}
+
+.menu_top li a {
+    font-size: 20px !important;
+}
+
+/* ******************** CSS For Content Section *********************** */
+.bg_content {}
+
+.content_section {}
+
+.content_left {
+    width: 21%;
+    margin-right: 12px;
+}
+
+.info {}
+
+.info img {
+    width: 150px;
+    height: 150px;
+}
+
+.side_menu {}
+
+.side_menu_bar {}
+
+.side_menu_bar>li {}
+
+.side_menu_bar>li>a {
+    background-color: #025A6C;
+    color: #fff;
+    padding: 6px 12px !important;
+}
+
+.side_menu_bar>li>a:hover {}
+
+.dropdown_icon {
+    font-size: 24px;
+    float: right;
+    margin-right: 5px;
+}
+
+.drop_menu_bar {}
+
+.drop_menu_bar li {}
+
+.drop_menu_bar li a {
+    text-decoration: none;
+    color: blue !important;
+    /* background-color: #fff !important; */
+}
+
+.drop_menu_bar li a:hover {
+    background-color: #ddd !important;
+}
+
+.content_right {
+    /* background-color: #ddd; */
+    width: 78%;
+}

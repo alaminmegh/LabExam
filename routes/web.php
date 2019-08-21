@@ -24,3 +24,5 @@ Route::post('/login', 'LoginController@user_validation');
 // ******************* Routes For Signup Controller *************************
 Route::get('/signup', 'SignUpController@index')->name('signup.index');
 Route::post('/signup', 'SignUpController@create_user');
+
+Route::get('/admin', 'AdminController@index')->name('admin.index');
