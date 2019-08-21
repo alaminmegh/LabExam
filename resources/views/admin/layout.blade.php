@@ -76,7 +76,7 @@
                       <div id="addUser" class="collapse border" data-parent="#accordion">
                       <ul class="list-group drop_menu_bar">
                         <li class="list-group-item p-0">
-                          <a class="d-block pl-3 pr-2 py-1" @yield('active_addStudent') href="#">
+                          <a class="d-block pl-3 pr-2 py-1" @yield('active_addStudent') href="{{route('admin.softwareList')}}">
                             <i class="fas fa-list-ul"></i> Software</a>
                         </li>
                         <li class="list-group-item p-0">

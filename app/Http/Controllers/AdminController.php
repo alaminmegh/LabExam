@@ -61,9 +61,10 @@ class AdminController extends Controller
           $file = $request->file('content');
           $fileName = $request->fileName;
           $file->move('userdata', $fileName.'.'.$file->getClientOriginalExtension());
-
+          $id = DB::table('contents')->max('fileId');
+          $id = $id + 1;
           $addFile = DB::table('contents')->insert(
-            ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory]
+            ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory,'fileId' => $id]
           );
 
           if($addFile){
@@ -80,6 +81,17 @@ class AdminController extends Controller
   }else {
     return redirect()->route('login.index');
   }
+  }
+
+  public function softwareList()
+  {
+    if(session()->has('username')){
+      $data = DB::table('contents')
+      ->get();
+       return view('admin.softwareList', ['softwareList' => $data]);
+    }else {
+      return redirect()->route('login.index');
+    }
   }
 
 }

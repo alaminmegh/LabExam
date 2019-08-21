@@ -35,3 +35,5 @@ Route::post('admin/addModerator', 'AdminController@createModerator');
 
 Route::get('admin/upload', 'AdminController@add_content')->name('admin.add_content');
 Route::post('admin/upload', 'AdminController@upload_content');
+
+Route::get('admin/softwareList', 'AdminController@softwareList')->name('admin.softwareList');
