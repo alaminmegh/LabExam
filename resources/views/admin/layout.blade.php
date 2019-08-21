@@ -33,17 +33,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">File Manager</a>
                 </li>
+              
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Batch</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">
-                    <i class="fas fa-plus"></i> Department</a>
+                  <a class="nav-link" href="{{route('admin.addModerator')}}">
+                    <i class="fas fa-plus"></i> Moderator</a>
                 </li>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Semester</a>
-                </li>
+
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('logout')}}">Logout</a>
                 </li>

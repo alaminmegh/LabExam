@@ -1,5 +1,5 @@
 
-@extends('admin.layout')
+@extends('moderator.layout')
 
 @section('title')
 Moderator | Home

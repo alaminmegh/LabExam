@@ -29,3 +29,6 @@ Route::post('/signup', 'SignUpController@create_user');
 
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 Route::get('/moderator', 'ModeratorController@index')->name('moderator.index');
+
+Route::get('admin/addModerator', 'AdminController@addModerator')->name('admin.addModerator');
+Route::post('admin/addModerator', 'AdminController@createModerator');
