@@ -39,3 +39,5 @@ Route::post('admin/upload', 'AdminController@upload_content');
 Route::get('admin/softwareList', 'AdminController@softwareList')->name('admin.softwareList');
 
 Route::get('admin/profile', 'AdminController@showProfile')->name('admin.profile');
+
+Route::get('admin/searchContent', 'AdminController@searchContent')->name('admin.searchContent');

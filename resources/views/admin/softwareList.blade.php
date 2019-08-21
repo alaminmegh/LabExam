@@ -89,6 +89,6 @@ Admin | software List
 </div>
 @endsection
 
-<!-- @section('ajax')
+@section('ajax')
 <script type="text/javascript" src="{{asset('custom')}}/style/ajax/search.js"></script>
-@endsection -->
+@endsection
