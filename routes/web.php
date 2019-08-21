@@ -30,14 +30,16 @@ Route::post('/signup', 'SignUpController@create_user');
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 Route::get('/moderator', 'ModeratorController@index')->name('moderator.index');
 
-Route::get('admin/addModerator', 'AdminController@addModerator')->name('admin.addModerator');
-Route::post('admin/addModerator', 'AdminController@createModerator');
+Route::get('/admin/addModerator', 'AdminController@addModerator')->name('admin.addModerator');
+Route::post('/admin/addModerator', 'AdminController@createModerator');
 
-Route::get('admin/upload', 'AdminController@add_content')->name('admin.add_content');
-Route::post('admin/upload', 'AdminController@upload_content');
+Route::get('/admin/upload', 'AdminController@add_content')->name('admin.add_content');
+Route::post('/admin/upload', 'AdminController@upload_content');
 
-Route::get('admin/softwareList', 'AdminController@softwareList')->name('admin.softwareList');
+Route::get('/admin/softwareList', 'AdminController@softwareList')->name('admin.softwareList');
 
-Route::get('admin/profile', 'AdminController@showProfile')->name('admin.profile');
+Route::get('/admin/profile', 'AdminController@showProfile')->name('admin.profile');
 
-Route::get('admin/searchContent', 'AdminController@searchContent')->name('admin.searchContent');
+Route::get('/admin/searchContent', 'AdminController@searchContent')->name('admin.searchContent');
+
+Route::get('/admin/content_delete', 'AdminController@contentDelete')->name('admin.contentDelete');

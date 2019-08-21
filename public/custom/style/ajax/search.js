@@ -1,5 +1,8 @@
 
 $(document).ready(function(){
+
+
+
   function searchStudent(string = ''){
     // console.log(string);
     $.ajax({
@@ -38,6 +41,23 @@ $(document).ready(function(){
     'filter' : list
   };
   searchStudent(result);
+ });
+
+
+ $(document).on('click', '.delete_data', function(){
+   if(confirm("Do you want to delete this?")){
+     var sid = $(this).attr("id");
+     $.ajax({
+       url:"content_delete",
+       method:'GET',
+       data:{fid:sid},
+       dataType:'json',
+       success:function(data){
+         $('#student_data').html(data);
+         // $('#total_records').text(data.total_data);
+       }
+     });
+   }
  });
 
 });

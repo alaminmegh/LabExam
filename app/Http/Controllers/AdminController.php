@@ -167,4 +167,39 @@ class AdminController extends Controller
       return redirect()->route('login.index');
     }
   }}
+  public function contentDelete(Request $request)
+  {
+    if(session()->has('username')){
+        $fileId = $request->fid;
+      // $username = $request->session()->get('username');
+      $res = DB::table('contents')
+      ->where('fileId',$fileId)
+      ->delete();
+
+      if($res){
+        $softwareList = DB::table('contents')
+        ->get();
+        $output = "";
+        $count =1;
+        foreach ($softwareList as $data){
+            $output .= '<tr class="text-center" style="font-size: 14px !important;">
+            <td>'.$count.'</td>
+            <td>'.$data->fileId.'</td>
+            <td>'.$data->name.'</td>
+            <td>'.$data->catagory.'</td>
+            <td>'.$data->subcatagory.'</td>
+            <td><input type="button" name="view" value="View" id="'.$data->fileId.'" class="btn btn-primary btn-sm view_data table_btn" ></td>
+            <td><input type="button" name="edit" value="Edit" id="'.$data->fileId.'" class="btn btn-primary btn-sm edit_data table_btn" ></td>
+            <td><input type="button" name="delete" value="Delete" id="'.$data->fileId.'" class="btn btn-primary btn-sm delete_data table_btn" ></td>
+          </tr>';
+        $count++;
+}
+        // $data = array('table_data'  => $output,'total_data'  => $total_row);
+        echo json_encode($output);
+      }
+    }else {
+      return redirect()->route('login.index');
+    }
+  }
+
 }
