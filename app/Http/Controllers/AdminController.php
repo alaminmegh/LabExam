@@ -58,25 +58,26 @@ class AdminController extends Controller
   {
       if(session()->has('username')){
 
-        $file = $request->file('content');
-
-            // echo "File Name: ".$file->getClientOriginalName();
-            // echo "<br>File Extension: ".$file->getClientOriginalExtension();
-            // echo "<br>File Size: ".$file->getSize();
-            // echo "<br>File Mime Type: ".$file->getMimeType();
-            $file->move('/userdata', $request->fileName);
-            
-    $addFile = DB::table('contents')->insert(
-      ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory]
-    );
-
-    if($addFile){
-      $request->session()->flash('success','File Added Successfully!');
-      return redirect()->route('admin.addContent');
-    }else {
-      $request->session()->flash('error','File Added Fail!');
-      return redirect()->route('admin.addContent');
-    }
+    //     $file = $request->file('content');
+    //
+    //         // echo "File Name: ".$file->getClientOriginalName();
+    //         // echo "<br>File Extension: ".$file->getClientOriginalExtension();
+    //         // echo "<br>File Size: ".$file->getSize();
+    //         // echo "<br>File Mime Type: ".$file->getMimeType();
+    //         $file->move('/userdata', $request->fileName);
+    //
+    // $addFile = DB::table('contents')->insert(
+    //   ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory]
+    // );
+    //
+    // if($addFile){
+    //   $request->session()->flash('success','File Added Successfully!');
+    //   return redirect()->route('admin.addContent');
+    // }else {
+    //   $request->session()->flash('error','File Added Fail!');
+    //   return redirect()->route('admin.addContent');
+    // }
+    echo $request;
   }else {
     return redirect()->route('login.index');
   }

@@ -25,7 +25,7 @@ Admin | Add Moderator
       <strong>{{session('error')}}</strong>
     </div>
     @endif
-    <form method="post" class="w-75 mx-auto">
+    <form method="post" class="w-75 mx-auto" enctype="multipart/form-data">
       @csrf
       <div class="form-group mb-1 mt-3">
         <label for="">File Name:</label>
