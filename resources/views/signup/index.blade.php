@@ -30,18 +30,42 @@
                 <label for="">Username:</label>
                 <input type="text" name="username" class="form-control form-control-sm" id="" placeholder="Username">
               </div>
+              @if ($errors->has('username'))
+                <p class="text-danger">{{ $errors->first('username') }}</p>
+                @endif
               <div class="form-group">
                 <label for="">Email:</label>
                 <input type="text" name="email" class="form-control form-control-sm" id="" placeholder="Email">
               </div>
+              @if ($errors->has('email'))
+                <p class="text-danger">{{ $errors->first('email') }}</p>
+                @endif
               <div class="form-group">
                 <label for="">Password:</label>
                 <input type="password" name="password" class="form-control form-control-sm" id="" placeholder="Password">
               </div>
+              @if ($errors->has('password'))
+                <p class="text-danger">{{ $errors->first('password') }}</p>
+                @endif
               <div class="form-group">
                 <label for="">Confirm Password:</label>
                 <input type="password" name="cpassword" class="form-control form-control-sm" id="" placeholder="Confirm Password">
               </div>
+              @if ($errors->has('cpassword'))
+                <p class="text-danger">{{ $errors->first('cpassword') }}</p>
+                @endif
+
+                <div class="form-group">
+      <label for="">User Type:</label>
+      <select class="form-control form-control-sm" id="" name="userType">
+        <option value="">Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="moderator">Moderator</option>
+      </select>
+    </div>
+    @if ($errors->has('userType'))
+      <p class="text-danger">{{ $errors->first('userType') }}</p>
+    @endif
               <button type="submit" class="btn btn-sm btn-success btn-block mb-3">Registration</button>
 
               <a href="#" class="float-left">Forget Password?</a>
