@@ -33,10 +33,15 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">File Manager</a>
                 </li>
-              
+
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('admin.addModerator')}}">
                     <i class="fas fa-plus"></i> Moderator</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('admin.add_content')}}">
+                    <i class="fas fa-plus"></i> Upload</a>
                 </li>
                 </li>
 
