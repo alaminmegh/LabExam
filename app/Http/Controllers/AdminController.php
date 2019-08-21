@@ -94,4 +94,17 @@ class AdminController extends Controller
     }
   }
 
+  public function showProfile(Request $request)
+  {
+    if(session()->has('username')){
+      $username = $request->session()->get('username');
+      $data = DB::table('users')
+      ->where('username',$username)
+      ->get();
+       return view('admin.profile', ['userdata' => $data]);
+    }else {
+      return redirect()->route('login.index');
+    }
+  }
+
 }

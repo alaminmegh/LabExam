@@ -74,7 +74,7 @@ Admin | software List
           <tr class="text-center" style="font-size: 14px !important;">
             <td>{{$count}}</td>
             <td>{{$data->fileId}}</td>
-            <td>{{$data->fileName}}</td>
+            <td>{{$data->name}}</td>
             <td>{{$data->catagory}}</td>
             <td>{{$data->subcatagory}}</td>
             <td><input type="button" name="view" value="View" id="{{$data->fileId}}" class="btn btn-primary btn-sm view_data table_btn" ></td>
