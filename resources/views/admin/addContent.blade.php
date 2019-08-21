@@ -27,6 +27,13 @@ Admin | Add Moderator
     @endif
     <form method="post" class="w-75 mx-auto">
       @csrf
+      <div class="form-group mb-1 mt-3">
+        <label for="">File Name:</label>
+        <input type="text" class="form-control form-control-sm" id="" name="fileName" placeholder="File Name"/>
+      </div>
+      @if ($errors->has('fileName'))
+        <p class="text-danger">{{ $errors->first('fileName') }}</p>
+      @endif
       <div class="form-group">
         <label for="">Catagory:</label>
         <select class="form-control form-control-sm" id="" name="catagory">

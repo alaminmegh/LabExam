@@ -60,23 +60,23 @@ class AdminController extends Controller
 
         $file = $request->file('content');
 
-            echo "File Name: ".$file->getClientOriginalName();
-            echo "<br>File Extension: ".$file->getClientOriginalExtension();
-            echo "<br>File Size: ".$file->getSize();
-            echo "<br>File Mime Type: ".$file->getMimeType();
+            // echo "File Name: ".$file->getClientOriginalName();
+            // echo "<br>File Extension: ".$file->getClientOriginalExtension();
+            // echo "<br>File Size: ".$file->getSize();
+            // echo "<br>File Mime Type: ".$file->getMimeType();
+            $file->move('/userdata', $request->fileName);
+            
+    $addFile = DB::table('contents')->insert(
+      ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory]
+    );
 
-            $file->move('upload', 'abc.PNG');
-    // $addUser = DB::table('users')->insert(
-    //   ['username' => $request->username, 'email' => $request->email, 'password' => $request->password, 'role' => $request->userType]
-    // );
-    //
-    // if($addUser){
-    //   $request->session()->flash('success','Registration Successfully!');
-    //   return redirect()->route('admin.addModerator');
-    // }else {
-    //   $request->session()->flash('error','Registration Fail!');
-    //   return redirect()->route('admin.addModerator');
-    // }
+    if($addFile){
+      $request->session()->flash('success','File Added Successfully!');
+      return redirect()->route('admin.addContent');
+    }else {
+      $request->session()->flash('error','File Added Fail!');
+      return redirect()->route('admin.addContent');
+    }
   }else {
     return redirect()->route('login.index');
   }

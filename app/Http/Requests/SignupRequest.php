@@ -31,7 +31,8 @@ class SignupRequest extends FormRequest
             'userType' => 'required',
             'catagory' => 'required',
             'subcatagory' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'fileName' => 'required'
 
         ];
     }
@@ -49,7 +50,8 @@ class SignupRequest extends FormRequest
           'userType.required' => 'User Type is required',
           'catagory.required' => 'Catagory is required',
           'subcatagory.required' => 'Subcatagory is required',
-          'content.required' => 'Content is required'
+          'content.required' => 'Content is required',
+          'fileName.required' => 'File Name is required'
         ];
     }
 }
