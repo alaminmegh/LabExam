@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home.index');
+
+// ******************* Routes For Login Controller *************************
+Route::get('/login', 'LoginController@index')->name('login.index');
+Route::post('/login', 'LoginController@user_validation');

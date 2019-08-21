@@ -50,7 +50,10 @@
         <nav class="navbar navbar-expand-sm p-0 ml-auto">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link px-3 py-2 text-white" href="/login"><i class="fas fa-user"></i> Login</a>
+              <a class="nav-link px-3 py-2 text-white" href=""><i class="fas fa-user-plus"></i> Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2 text-white" href="{{route('login.index')}}"><i class="fas fa-user"></i> Login</a>
             </li>
           </ul>
         </nav>
