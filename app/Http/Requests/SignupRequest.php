@@ -28,7 +28,10 @@ class SignupRequest extends FormRequest
           'email' => 'required|unique:users,email',
           'password' => 'required',
           'cpassword' => 'required|same:password',
-            'userType' => 'required'
+            'userType' => 'required',
+            'catagory' => 'required',
+            'subcatagory' => 'required',
+            'content' => 'required'
 
         ];
     }
@@ -43,7 +46,10 @@ class SignupRequest extends FormRequest
           'password.required' => 'Password is required',
           'cpassword.required' => 'Confirm Password is required',
           'cpassword.same' => 'Password & Confirm Password not match',
-          'userType.required' => 'User Type is required'
+          'userType.required' => 'User Type is required',
+          'catagory.required' => 'Catagory is required',
+          'subcatagory.required' => 'Subcatagory is required',
+          'content.required' => 'Content is required'
         ];
     }
 }

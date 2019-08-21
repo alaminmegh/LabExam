@@ -57,6 +57,15 @@ class AdminController extends Controller
   public function upload_content(SignupRequest $request)
   {
       if(session()->has('username')){
+
+        $file = $request->file('content');
+
+            echo "File Name: ".$file->getClientOriginalName();
+            echo "<br>File Extension: ".$file->getClientOriginalExtension();
+            echo "<br>File Size: ".$file->getSize();
+            echo "<br>File Mime Type: ".$file->getMimeType();
+
+            $file->move('upload', 'abc.PNG');
     // $addUser = DB::table('users')->insert(
     //   ['username' => $request->username, 'email' => $request->email, 'password' => $request->password, 'role' => $request->userType]
     // );

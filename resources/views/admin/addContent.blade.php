@@ -43,6 +43,7 @@ Admin | Add Moderator
         <div class="form-group">
           <label for="">Sub Catagory:</label>
             <select class="form-control form-control-sm" id="" name="subcatagory">
+                <option value="">Select Catagory</option>
           <option value="bangla">Bangla</option>
           <option value="english">English</option>
           <option value="hindi">Hindi</option>
