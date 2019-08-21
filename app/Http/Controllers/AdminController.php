@@ -116,38 +116,23 @@ class AdminController extends Controller
 
         if($query != ''){
          $text = $query['data'];
-         // $filter = $query['filter'];
-         // if(sizeof($filter) == 5){
+         $filter = $query['filter'];
+         if(sizeof($filter) == 3){
            $data = DB::table('contents')
-             ->where('name', 'like', '%'.$text.'%')
-             // ->orWhere($filter[1], 'like', '%'.$text.'%')
-             // ->orWhere($filter[2], 'like', '%'.$text.'%')
-             // ->orWhere($filter[3], 'like', '%'.$text.'%')
-             // ->orWhere($filter[4], 'like', '%'.$text.'%')
+             ->where($filter[0], 'like', '%'.$text.'%')
+             ->orWhere($filter[1], 'like', '%'.$text.'%')
+             ->orWhere($filter[2], 'like', '%'.$text.'%')
              ->get();
-         // }else if(sizeof($filter) == 4){
-         //   $data = DB::table('students')
-         //     ->where($filter[0], 'like', '%'.$text.'%')
-         //     ->orWhere($filter[1], 'like', '%'.$text.'%')
-         //     ->orWhere($filter[2], 'like', '%'.$text.'%')
-         //     ->orWhere($filter[3], 'like', '%'.$text.'%')
-         //     ->get();
-         // }else if(sizeof($filter) == 3){
-         //   $data = DB::table('students')
-         //     ->where($filter[0], 'like', '%'.$text.'%')
-         //     ->orWhere($filter[1], 'like', '%'.$text.'%')
-         //     ->orWhere($filter[2], 'like', '%'.$text.'%')
-         //     ->get();
-         // }else if(sizeof($filter) == 2){
-         //   $data = DB::table('students')
-         //     ->where($filter[0], 'like', '%'.$text.'%')
-         //     ->orWhere($filter[1], 'like', '%'.$text.'%')
-         //     ->get();
-         // }else if(sizeof($filter) == 1){
-         //   $data = DB::table('students')
-         //     ->where($filter[0], 'like', '%'.$text.'%')
-         //     ->get();
-         // }
+         }else if(sizeof($filter) == 2){
+           $data = DB::table('contents')
+             ->where($filter[0], 'like', '%'.$text.'%')
+             ->orWhere($filter[1], 'like', '%'.$text.'%')
+             ->get();
+         }else if(sizeof($filter) == 1){
+           $data = DB::table('contents')
+             ->where($filter[0], 'like', '%'.$text.'%')
+             ->get();
+         }
         }else{
           $data = DB::table('contents')->get();
         }

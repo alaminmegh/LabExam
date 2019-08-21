@@ -27,27 +27,17 @@ Admin | software List
             <ul class="dropdown-menu text-left shadow-lg search_dropdown">
               <li>
                 <a class="dropdown-item px-2 py-0 search_dropdown_link" href="#">
-                  <input type="checkbox" name="search_filter" value="studentId" checked> ID
+                  <input type="checkbox" name="search_filter" value="name" checked> Name
                 </a>
               </li>
               <li>
                 <a class="dropdown-item px-2 py-0 search_dropdown_link" href="#">
-                  <input type="checkbox" name="search_filter" value="studentName" checked> Name
+                  <input type="checkbox" name="search_filter" value="catagory" checked> Catagory
                 </a>
               </li>
               <li>
                 <a class="dropdown-item px-2 py-0 search_dropdown_link" href="#">
-                  <input type="checkbox" name="search_filter" value="studentEmail" checked> Email
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item px-2 py-0 search_dropdown_link" href="#">
-                  <input type="checkbox" name="search_filter" value="department" checked> Department
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item px-2 py-0 search_dropdown_link" href="#">
-                  <input type="checkbox" name="search_filter" value="cgpa" checked> CGPA
+                  <input type="checkbox" name="search_filter" value="subcatagory" checked> Sub Catagory
                 </a>
               </li>
             </ul>
