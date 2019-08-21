@@ -54,30 +54,29 @@ class AdminController extends Controller
     }
   }
 
-  public function upload_content(SignupRequest $request)
+  public function upload_content(Request $request)
   {
       if(session()->has('username')){
+        if($request->hasFile('content')){
+          $file = $request->file('content');
+          $fileName = $request->fileName;
+          $file->move('userdata', $fileName.'.'.$file->getClientOriginalExtension());
 
-    //     $file = $request->file('content');
-    //
-    //         // echo "File Name: ".$file->getClientOriginalName();
-    //         // echo "<br>File Extension: ".$file->getClientOriginalExtension();
-    //         // echo "<br>File Size: ".$file->getSize();
-    //         // echo "<br>File Mime Type: ".$file->getMimeType();
-    //         $file->move('/userdata', $request->fileName);
-    //
-    // $addFile = DB::table('contents')->insert(
-    //   ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory]
-    // );
-    //
-    // if($addFile){
-    //   $request->session()->flash('success','File Added Successfully!');
-    //   return redirect()->route('admin.addContent');
-    // }else {
-    //   $request->session()->flash('error','File Added Fail!');
-    //   return redirect()->route('admin.addContent');
-    // }
-    echo $request;
+          $addFile = DB::table('contents')->insert(
+            ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory]
+          );
+
+          if($addFile){
+            $request->session()->flash('success','File Added Successfully!');
+            return redirect()->route('admin.add_content');
+          }else {
+            $request->session()->flash('error','File Added Fail!');
+            return redirect()->route('admin.add_content');
+          }
+          }else {
+            $request->session()->flash('error','No file Selected!');
+            return redirect()->route('admin.add_content');
+          }
   }else {
     return redirect()->route('login.index');
   }
