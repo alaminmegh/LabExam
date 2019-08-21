@@ -87,10 +87,10 @@
                     </div>
                   </li>
                   <li class="nav-item mb-2">
-                    <a class="nav-link" href="#">Link 3</a>
+                    <a class="nav-link" href="{{route('moderator.profile')}}">Profile</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a class="nav-link" href="#">Link 1</a>
+                    <a class="nav-link" href="#">Change Password</a>
                   </li>
                   <li class="nav-item mb-2">
                     <a class="nav-link" href="{{route('logout')}}">Logout</a>
