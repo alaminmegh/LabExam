@@ -64,11 +64,36 @@
             <div class="info border px-2 py-1">
               <img class="img-thumbnail d-block mx-auto mb-3" src="{{asset('custom')}}/images/user.png" alt="Current User">
               <h5 class="text-center mb-0">Welcome,</h5>
-              <p class="text-center">Mohammad Al Amin Hawlader Megh</p>
+              <p class="text-center">{{session('username')}}</p>
             </div>
             <div class="side_menu mt-1">
               <nav class="navbar px-0">
                 <ul class="navbar-nav side_menu_bar flex-fill" id="accordion">
+                  <li class="nav-item mb-2">
+                    <a class="nav-link collapsed" data-toggle="collapse" href="#addUser">
+                      <i class="fas fa-list-ul"></i> Content List <i class="fas fa-caret-down dropdown_icon"></i> </a>
+
+                      <div id="addUser" class="collapse border" data-parent="#accordion">
+                      <ul class="list-group drop_menu_bar">
+                        <li class="list-group-item p-0">
+                          <a class="d-block pl-3 pr-2 py-1" @yield('active_addStudent') href="#">
+                            <i class="fas fa-list-ul"></i> Software</a>
+                        </li>
+                        <li class="list-group-item p-0">
+                          <a class="d-block pl-3 pr-2 py-1" @yield('active_addTeacher') href="#">
+                            <i class="fas fa-list-ul"></i> Movies</a>
+                        </li>
+                        <li class="list-group-item p-0">
+                          <a class="d-block pl-3 pr-2 py-1" @yield('active_addAdmin') href="#">
+                            <i class="fas fa-list-ul"></i> Video Songs</a>
+                        </li>
+                        <li class="list-group-item p-0">
+                          <a class="d-block pl-3 pr-2 py-1" @yield('active_addAdmin') href="#">
+                            <i class="fas fa-list-ul"></i> Natok</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
                   <li class="nav-item mb-2">
                     <a class="nav-link" href="#">Link 3</a>
                   </li>
