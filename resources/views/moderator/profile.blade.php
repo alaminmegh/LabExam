@@ -1,8 +1,8 @@
 
-@extends('admin.layout')
+@extends('moderator.layout')
 
 @section('title')
-Admin | Profile
+Moderator | Profile
 @endsection
 
 @section('style')

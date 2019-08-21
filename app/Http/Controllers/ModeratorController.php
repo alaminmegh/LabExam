@@ -19,7 +19,7 @@ class ModeratorController extends Controller
   public function add_content()
   {
     if(session()->has('username')){
-      return view('admin.addContent');
+      return view('moderator.addContent');
     }else {
       return redirect()->route('login.index');
     }
@@ -40,14 +40,14 @@ class ModeratorController extends Controller
 
           if($addFile){
             $request->session()->flash('success','File Added Successfully!');
-            return redirect()->route('admin.add_content');
+            return redirect()->route('moderator.add_content');
           }else {
             $request->session()->flash('error','File Added Fail!');
-            return redirect()->route('admin.add_content');
+            return redirect()->route('moderator.add_content');
           }
           }else {
             $request->session()->flash('error','No file Selected!');
-            return redirect()->route('admin.add_content');
+            return redirect()->route('moderator.add_content');
           }
   }else {
     return redirect()->route('login.index');
@@ -59,7 +59,7 @@ class ModeratorController extends Controller
     if(session()->has('username')){
       $data = DB::table('contents')
       ->get();
-       return view('admin.softwareList', ['softwareList' => $data]);
+       return view('moderator.softwareList', ['softwareList' => $data]);
     }else {
       return redirect()->route('login.index');
     }
@@ -72,7 +72,7 @@ class ModeratorController extends Controller
       $data = DB::table('users')
       ->where('username',$username)
       ->get();
-       return view('admin.profile', ['userdata' => $data]);
+       return view('moderator.profile', ['userdata' => $data]);
     }else {
       return redirect()->route('login.index');
     }

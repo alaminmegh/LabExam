@@ -1,8 +1,8 @@
 
-@extends('admin.layout')
+@extends('moderator.layout')
 
 @section('title')
-Admin | Add Moderator
+Moderator | Upload Content
 @endsection
 
 @section('style')
@@ -40,6 +40,8 @@ Admin | Add Moderator
           <option value="">Select Catagory</option>
           <option value="software">Software</option>
           <option value="movies">Movies</option>
+          <option value="games">Games</option>
+          <option value="tvseries">TV Series</option>
           <option value="videosongs">Video Songs</option>
           <option value="natok">Natok</option>
         </select>

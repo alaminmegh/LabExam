@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SignupRequest;
 use Illuminate\Support\Facades\DB;
+use File;
 
 class AdminController extends Controller
 {
@@ -59,12 +60,14 @@ class AdminController extends Controller
       if(session()->has('username')){
         if($request->hasFile('content')){
           $file = $request->file('content');
+
           $fileName = $request->fileName;
+          $n = $fileName.'.'.$file->getClientOriginalExtension();
           $file->move('userdata', $fileName.'.'.$file->getClientOriginalExtension());
           $id = DB::table('contents')->max('fileId');
           $id = $id + 1;
           $addFile = DB::table('contents')->insert(
-            ['name' => $request->fileName, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory,'fileId' => $id]
+            ['name' => $n, 'catagory' => $request->catagory, 'subcatagory' => $request->subcatagory,'fileId' => $id]
           );
 
           if($addFile){
@@ -172,9 +175,15 @@ class AdminController extends Controller
     if(session()->has('username')){
         $fileId = $request->fid;
       // $username = $request->session()->get('username');
+      $n = DB::table('contents')
+      ->where('fileId',$fileId)
+      ->get();
+      $filename = $n[0]->name;
       $res = DB::table('contents')
       ->where('fileId',$fileId)
       ->delete();
+      $des = "userdata/".$filename;
+      File::delete($des);
 
       if($res){
         $softwareList = DB::table('contents')

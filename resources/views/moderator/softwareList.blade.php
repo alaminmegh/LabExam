@@ -1,8 +1,8 @@
 
-@extends('admin.layout')
+@extends('moderator.layout')
 
 @section('title')
-Admin | software List
+Moderator | software List
 @endsection
 
 @section('style')
