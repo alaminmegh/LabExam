@@ -21,8 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home.index');
 Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@user_validation');
 
+Route::get('/logout', 'LogoutController@logout')->name('logout');
+
 // ******************* Routes For Signup Controller *************************
 Route::get('/signup', 'SignUpController@index')->name('signup.index');
 Route::post('/signup', 'SignUpController@create_user');
 
 Route::get('/admin', 'AdminController@index')->name('admin.index');
+Route::get('/moderator', 'ModeratorController@index')->name('moderator.index');

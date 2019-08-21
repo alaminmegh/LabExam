@@ -20,9 +20,15 @@ class LoginController extends Controller
     ->where('password',   $request->password)
     ->get();
 
-    if($user){
-      $request->session()->put('username',$request->username);
-      return redirect()->route('admin.index');
+    if(sizeof($user) >0){
+      if($user[0]->role == 'admin'){
+        $request->session()->put('username',$request->username);
+        return redirect()->route('admin.index');
+      }else if($user[0]->role == 'moderator'){
+        $request->session()->put('username',$request->username);
+        return redirect()->route('moderator.index');
+      }
+
     }else {
       $request->session()->flash('error','Username & Password invalid!');
       return redirect()->route('login.index');

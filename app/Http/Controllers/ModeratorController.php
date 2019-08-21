@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ModeratorController extends Controller
 {
   public function index()
   {
     if(session()->has('username')){
-      return view('admin.index');
+      return view('moderator.index');
     }else {
       return redirect()->route('login.index');
     }
