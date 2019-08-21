@@ -1,0 +1,40 @@
+
+body{
+    background-color: #e3e3e3;
+}
+
+/* CSS For Login Section */
+.bg_login{}
+
+.login_section{}
+
+.login_form{
+  position: relative;
+  top: 150px;
+  border-radius: 10px;
+  background-color: #5c8a8a;
+}
+
+.login_form h5{
+  color: #fff;
+  padding: 10px 0px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #006699;
+
+}
+
+.login_form button{
+  font-size: 17px;
+}
+
+.login_form a{
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  /* display: inline-block; */
+}
+
+.login_form a:hover{
+  color: #ff9933;
+  text-decoration: underline;
+}
